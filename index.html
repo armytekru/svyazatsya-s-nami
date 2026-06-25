@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Официальные ссылки ARMYTEK Россия.">
+  <title>ARMYTEK — Ссылки</title>
+  <style>
+    :root {
+      --yellow: #ffcc00;
+      --black: #000000;
+      --bg: #070707;
+      --card: rgba(18, 18, 18, 0.86);
+      --text: #f7f7f7;
+      --muted: #d8d8d8;
+      --shadow-soft: 0 22px 60px rgba(0, 0, 0, 0.48);
+      --shadow-button: 0 14px 28px rgba(0, 0, 0, 0.34);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
+    body {
+      min-height: 100svh;
+      margin: 0;
+      font-family: "Muller", "Arial", "Helvetica Neue", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(255, 204, 0, 0.18), transparent 34rem),
+        linear-gradient(180deg, #171717 0%, #111111 54%, #050505 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), transparent 70%);
+    }
+
+    .page {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100svh;
+      padding: 28px 16px;
+    }
+
+    .profile-card {
+      width: min(100%, 480px);
+      padding: 28px 18px 22px;
+      text-align: center;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 28px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+    }
+
+    .avatar-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 128px;
+      height: 128px;
+      aspect-ratio: 1 / 1;
+      padding: 5px;
+      margin-bottom: 18px;
+      background: var(--yellow);
+      border-radius: 50%;
+      box-shadow: 0 16px 34px rgba(255, 204, 0, 0.34);
+    }
+
+    .avatar {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+      border: 4px solid var(--text);
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    .brand-name {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(2.15rem, 10vw, 3.35rem);
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: 0.055em;
+    }
+
+    .description {
+      max-width: 390px;
+      margin: 14px auto 24px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .links {
+      display: grid;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .button-link {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      width: 100%;
+      min-height: 58px;
+      padding: 7px 22px 7px 16px;
+      border: 2px solid var(--black);
+      border-radius: 20px;
+      color: var(--text);
+      background: var(--black);
+      box-shadow: var(--shadow-button);
+      font-size: 1.02rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: left;
+      text-decoration: none;
+      transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        background-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .button-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.42);
+    }
+
+    .button-link:active {
+      transform: translateY(-1px);
+    }
+
+    .button-link:focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 4px;
+    }
+
+    .button-link .label {
+      flex: 1;
+      text-align: center;
+      transform: translateX(-22px);
+    }
+
+    .button-link.official {
+      color: var(--black);
+      background: var(--yellow);
+      text-shadow: none;
+    }
+
+    .button-link.official:hover {
+      background: #ffd83d;
+    }
+
+    .icon-badge {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      color: var(--black);
+      background: var(--yellow);
+    }
+
+    .button-link.official .icon-badge {
+      color: var(--yellow);
+      background: var(--black);
+    }
+
+    .icon-badge svg {
+      display: block;
+      width: 23px;
+      height: 23px;
+      fill: currentColor;
+    }
+
+    .icon-badge svg.stroke-icon {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .tagline {
+      margin: 26px 0 0;
+      color: var(--text);
+      font-size: 0.98rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 520px) {
+      .page {
+        padding: 42px 24px;
+      }
+
+      .profile-card {
+        padding: 34px 28px 26px;
+      }
+
+      .button-link {
+        min-height: 62px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+
+      .button-link:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="profile-card" aria-labelledby="brand-title">
+      <div class="avatar-wrap">
+        <svg class="avatar" viewBox="0 0 428 426" width="128" height="128" aria-hidden="true" focusable="false">
+          <rect width="428" height="426" fill="#000000"/>
+          <path fill="#ffcc00" d="M53 215 77 251 108 283 156 317 187 332 219 343 251 350 284 353 294 351 299 345 321 292 330 249 332 197 326 152 307 95 295 74 271 72 232 78 198 88 164 103 137 119 105 144 85 164 57 201Z"/>
+        </svg>
+      </div>
+
+      <h1 class="brand-name" id="brand-title">ARMYTEK</h1>
+
+      <p class="description">
+        Производитель высокотехнологичных фонарей, зарядных устройств и аксессуаров. Мы делаем упор на качество и надежность.
+      </p>
+
+      <nav class="links" aria-label="Официальные ссылки ARMYTEK">
+        <a class="button-link" href="https://t.me/armytekru" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <span class="icon-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M23.48 2.17a1.52 1.52 0 0 0-1.57-.23L1.04 10.1a1.53 1.53 0 0 0 .11 2.88l5.17 1.74 2.01 6.21a1.52 1.52 0 0 0 2.58.56l2.9-2.98 5.08 3.72a1.53 1.53 0 0 0 2.39-.91l2.7-17.68a1.52 1.52 0 0 0-.5-1.47ZM8.7 14.05l9.39-7.57-7.51 9.08-.52 3.26-1.36-4.77Z"/>
+            </svg>
+          </span>
+          <span class="label">Telegram</span>
+        </a>
+
+        <a class="button-link" href="https://vk.com/armytekru" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
+          <span class="icon-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2Zm3.08 14.29h-1.46c-.55 0-.72-.44-1.71-1.43-.86-.83-1.24-.94-1.45-.94-.3 0-.38.08-.38.5v1.31c0 .35-.11.56-1.04.56-1.54 0-3.24-.93-4.44-2.66-1.8-2.53-2.29-4.43-2.29-4.82 0-.21.08-.4.5-.4h1.46c.37 0 .51.17.65.56.72 2.09 1.93 3.93 2.43 3.93.19 0 .28-.09.28-.57v-2.2c-.06-1.01-.59-1.1-.59-1.46 0-.17.14-.34.37-.34h2.3c.31 0 .42.17.42.54v2.97c0 .32.14.43.23.43.19 0 .35-.11.7-.46 1.09-1.22 1.86-3.1 1.86-3.1.1-.21.27-.4.64-.4h1.46c.44 0 .54.23.44.54-.18.85-1.95 3.34-1.95 3.34-.16.26-.22.38 0 .67.16.21.68.66 1.03 1.07.64.72 1.13 1.32 1.26 1.74.14.41-.07.62-.49.62Z"/>
+            </svg>
+          </span>
+          <span class="label">ВКонтакте</span>
+        </a>
+
+        <a class="button-link" href="https://max.ru/join/BAq790D-xW-aF1Ee_IeWdSjaDURAq282WGshKvRGiLI" target="_blank" rel="noopener noreferrer" aria-label="MAX">
+          <span class="icon-badge" aria-hidden="true">
+            <svg class="stroke-icon" viewBox="0 0 24 24" role="img">
+              <path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-1-1.73V6a2 2 0 0 1 2-2Z"/>
+              <path d="M7.5 13V8.5l2.25 2.75L12 8.5V13m2.5-4.5 2 4.5m0-4.5-2 4.5"/>
+            </svg>
+          </span>
+          <span class="label">MAX</span>
+        </a>
+
+        <a class="button-link" href="https://yandex.ru/rythm/businesses/@armytekru/" target="_blank" rel="noopener noreferrer" aria-label="Яндекс-ритм">
+          <span class="icon-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <rect x="2" y="9" width="3" height="6" rx="1.5"/>
+              <rect x="6.25" y="5" width="3" height="14" rx="1.5"/>
+              <rect x="10.5" y="2" width="3" height="20" rx="1.5"/>
+              <rect x="14.75" y="6" width="3" height="12" rx="1.5"/>
+              <rect x="19" y="9" width="3" height="6" rx="1.5"/>
+            </svg>
+          </span>
+          <span class="label">Яндекс-ритм</span>
+        </a>
+
+        <a class="button-link" href="https://dzen.ru/user/8qjfox0ixet0oeyxbxritdtx6ou" target="_blank" rel="noopener noreferrer" aria-label="Дзен">
+          <span class="icon-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M11 2H4a2 2 0 0 0-2 2v7h2a7 7 0 0 0 7-7V2Zm2 0v2a7 7 0 0 0 7 7h2V4a2 2 0 0 0-2-2h-7Zm9 11h-2a7 7 0 0 0-7 7v2h7a2 2 0 0 0 2-2v-7ZM11 22v-2a7 7 0 0 0-7-7H2v7a2 2 0 0 0 2 2h7Z"/>
+            </svg>
+          </span>
+          <span class="label">Дзен</span>
+        </a>
+
+        <a class="button-link official" href="https://armytek.ru/" target="_blank" rel="noopener noreferrer" aria-label="Официальный сайт ARMYTEK">
+          <span class="icon-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/>
+            </svg>
+          </span>
+          <span class="label">Официальный сайт: armytek.ru</span>
+        </a>
+      </nav>
+
+      <p class="tagline">Создан превосходить</p>
+    </section>
+  </main>
+</body>
+</html>
